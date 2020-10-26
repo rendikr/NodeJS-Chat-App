@@ -1,9 +1,9 @@
 const path = require('path')
 const express = require('express')
 
-const publicDirectoryPath = path.join(__dirname, '../public')
-
 const app = express()
+
+const publicDirectoryPath = path.join(__dirname, '../public')
 
 app.use(express.json()) // automatically parse any json
 app.use(express.static(publicDirectoryPath))
