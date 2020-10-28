@@ -6,8 +6,17 @@ const port = process.env.PORT || 3000
 const server = http.createServer(app)
 const io = socket(server)
 
-io.on('connection', () => {
+let count = 0
+
+io.on('connection', (socket) => {
   console.log('New WebSocket connection')
+
+  socket.emit('countUpdated', count)
+
+  socket.on('increment', () => {
+    count++
+    io.emit('countUpdated', count)
+  })
 })
 
 server.listen(port, () => {
