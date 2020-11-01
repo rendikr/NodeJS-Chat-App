@@ -14,7 +14,7 @@
 
     <form id="frmMessage">
       <input name="message" type="text" placeholder="Message..."/>
-      <button >Search</button>
+      <button >Send</button>
     </form>
 
     <br>
@@ -23,6 +23,16 @@
     <script id="messageTemplate" type="text/html">
       <div>
         <p>{{message}}</p>
+      </div>
+    </script>
+
+    <script id="locationMessageTemplate" type="text/html">
+      <div>
+        <p>
+          <a href="{{url}}" target="__blank">
+            My current location
+          </a>
+        </p>
       </div>
     </script>
 
